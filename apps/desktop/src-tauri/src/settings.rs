@@ -194,6 +194,8 @@ pub struct Prefs {
     pub call_actions: Vec<crate::plugins::callactions::CallAction>,
     /// Angelegte Türkameras (Name und URL), als Kachel anzeigbar
     pub door_cams: Vec<crate::plugins::doorcam::DoorCam>,
+    /// Callback-Modul der Anlage (<Anlage>/callback) als Reiter bzw. Kachel
+    pub callback_module: bool,
     /// Landesvorwahl ohne "+" für die Umrechnung nationaler Nummern
     pub default_country_code: String,
     /// Beim Minimieren nur noch im Tray anzeigen
@@ -269,6 +271,7 @@ impl Default for Prefs {
             handle_tel_links: true,
             call_actions: Vec::new(),
             door_cams: Vec::new(),
+            callback_module: false,
             default_country_code: "41".into(),
             minimize_to_tray: false,
             always_on_top: false,

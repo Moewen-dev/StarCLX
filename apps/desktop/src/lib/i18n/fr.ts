@@ -672,5 +672,10 @@ const dict: Record<string, string> = {
   "Keine Anrufe.": "Aucun appel.",
   "Wird geladen …": "Chargement …",
   "7 Tage": "7 jours",
+  "Neu laden": "Recharger",
+  "In eigenem Fenster öffnen": "Ouvrir dans une fenêtre séparée",
+  "Keine Anlage angemeldet.": "Aucun PBX connecté.",
+  "Callback-Modul der Anlage anzeigen": "Afficher le module de rappel du PBX",
+  "Zeigt die Webseite <Anlage>/callback als eigenen Reiter bzw. eigene Kachel.": "Affiche la page web <PBX>/callback dans son propre onglet ou sa propre tuile.",
 };
 export default dict;

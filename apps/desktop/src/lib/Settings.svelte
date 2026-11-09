@@ -666,6 +666,8 @@
         <div class="card">
           <Toggle bind:checked={draft.handle_tel_links} disabled={lk("handle_tel_links")} label={t("Rufnummern-Links (tel:, callto:, sip:) mit StarCLX öffnen")} />
           <p class="small muted">{t("Ein Klick auf eine Rufnummer im Browser oder Mailprogramm wählt sie mit dem Softphone.")}</p>
+          <Toggle bind:checked={draft.callback_module} disabled={lk("callback_module")} label={t("Callback-Modul der Anlage anzeigen")} />
+          <p class="small muted">{t("Zeigt die Webseite <Anlage>/callback als eigenen Reiter bzw. eigene Kachel.")}</p>
         </div>
       </section>
 

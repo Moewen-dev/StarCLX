@@ -83,5 +83,8 @@
 ## Türkameras (Liste, JSON)
 #door_cams=[{"name":"Eingang","url":"rtsp://kamera.firma.ch/stream"}]
 
+## Callback-Modul der Anlage (<Anlage>/callback) als Reiter anzeigen
+#callback_module=false
+
 ## Protokoll
 #verbose_log=false
