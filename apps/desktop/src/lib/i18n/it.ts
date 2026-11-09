@@ -672,5 +672,10 @@ const dict: Record<string, string> = {
   "Keine Anrufe.": "Nessuna chiamata.",
   "Wird geladen …": "Caricamento …",
   "7 Tage": "7 giorni",
+  "Neu laden": "Ricarica",
+  "In eigenem Fenster öffnen": "Apri in una finestra separata",
+  "Keine Anlage angemeldet.": "Nessun centralino connesso.",
+  "Callback-Modul der Anlage anzeigen": "Mostra il modulo di richiamata del centralino",
+  "Zeigt die Webseite <Anlage>/callback als eigenen Reiter bzw. eigene Kachel.": "Mostra la pagina web <centralino>/callback come scheda o riquadro a sé.",
 };
 export default dict;

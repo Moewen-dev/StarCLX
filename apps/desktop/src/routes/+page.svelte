@@ -14,6 +14,7 @@
   import Recordings from "#lib/plugins/recordings/Recordings.svelte";
   import FunctionKeys from "#lib/plugins/fkeys/FunctionKeys.svelte";
   import DoorCams from "#lib/plugins/doorcam/DoorCams.svelte";
+  import Callback from "#lib/plugins/callback/Callback.svelte";
   import Conferences from "#lib/plugins/conference/Conferences.svelte";
   import Queues from "#lib/plugins/queue/Queues.svelte";
   import { initQueues, queues, waitingCalls } from "#lib/plugins/queue/queue.svelte.ts";
@@ -244,7 +245,7 @@
 
   let menuOpen = $state(false);
   let settingsOpen = $state(false);
-  type Tab = "journal" | "voicemail" | "recordings" | "contacts" | "chat" | "fkeys" | "conference" | "queue" | "doorcam";
+  type Tab = "journal" | "voicemail" | "recordings" | "contacts" | "chat" | "fkeys" | "conference" | "queue" | "doorcam" | "callback";
   let tab = $state<Tab>("journal");
   const allTabs: { id: Tab; icon: IconName; label: string }[] = $derived([
     { id: "journal", icon: "history", label: t("Rufliste") },
@@ -256,6 +257,7 @@
     { id: "conference", icon: "meetings", label: t("Konferenzen") },
     { id: "queue", icon: "groups", label: t("Warteschlangen") },
     { id: "doorcam", icon: "videocam", label: t("Türkamera") },
+    { id: "callback", icon: "call", label: "Callback" },
   ]);
   /** Türkamera nur mit angelegten Kameras anbieten */
   const hasDoorCams = $derived(!!prefs.value?.door_cams?.some((c) => c.url.trim()));
@@ -271,7 +273,7 @@
   /** Ohne Recht wird der Reiter bzw. die Kachel gar nicht angezeigt */
   const tabOff = (id: Tab) => {
     const p = tabPermission[id];
-    return (p !== undefined && !can(p)) || (id === "voicemail" && voicemail.disabled) || (id === "recordings" && recordings.disabled) || (id === "fkeys" && fkeys.forbidden);
+    return (p !== undefined && !can(p)) || (id === "voicemail" && voicemail.disabled) || (id === "recordings" && recordings.disabled) || (id === "fkeys" && fkeys.forbidden) || (id === "callback" && !prefs.value?.callback_module);
   };
   /** Warteschlangen nur für Agenten einer iQueue */
   const hasQueues = $derived(queues.queues.length > 0);
@@ -480,6 +482,8 @@
           <Conferences />
         {:else if id === "queue"}
           <Queues />
+        {:else if id === "callback"}
+          <Callback server={session?.server ?? ""} />
         {:else}
           <Chat />
         {/if}

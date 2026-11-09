@@ -8,6 +8,7 @@
 use tauri::AppHandle;
 
 pub mod busylight;
+pub mod callback;
 pub mod call;
 pub mod callactions;
 pub mod chat;

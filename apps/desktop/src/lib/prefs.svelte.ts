@@ -65,6 +65,8 @@ export type Prefs = {
   workspace_view: string;
   /** Ausführliches Protokoll (Anruf- und Verbindungsdetails) */
   verbose_log: boolean;
+  /** Callback-Modul der Anlage (<Anlage>/callback) als Reiter bzw. Kachel */
+  callback_module: boolean;
   /** Ordner in Nextcloud für geteilte Dateien */
   nextcloud_folder: string;
   /** Ablauf der Links in Tagen; 0 = nie */

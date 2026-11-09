@@ -47,7 +47,7 @@ pub fn open(app: &AppHandle, url: &url::Url) -> tauri::Result<()> {
 /// Lässt WebKit ein vom Benutzer bestätigtes Zertifikat annehmen und lädt
 /// die Seite neu.
 #[cfg(target_os = "linux")]
-fn allow_confirmed_certificates(webview: tauri::webview::PlatformWebview) {
+pub(crate) fn allow_confirmed_certificates(webview: tauri::webview::PlatformWebview) {
     use webkit2gtk::gio::prelude::TlsCertificateExt;
     use webkit2gtk::{WebContextExt, WebViewExt};
 

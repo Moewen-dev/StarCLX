@@ -186,6 +186,14 @@ const TEXTS: &[(&str, [&str; 3])] = &[
             "StarCLX – Accesso",
         ],
     ),
+    (
+        "StarCLX – Callback",
+        [
+            "StarCLX – Callback",
+            "StarCLX – Rappel",
+            "StarCLX – Richiamata",
+        ],
+    ),
     ("Abgemeldet", ["Signed out", "Déconnecté", "Disconnesso"]),
     (
         "Sitzung beendet: {reason}",
